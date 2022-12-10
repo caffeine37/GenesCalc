@@ -1,49 +1,28 @@
-function generateGenes() {
+function calculoGenes() {
 
-    if ((document.getElementById('gene1').value == 'Aa' && document.getElementById('gene2').value == 'Aa') || (document.getElementById('gene1').value == 'aA' || document.getElementById('gene2').value == 'aA')) {
-        result = 'Invalid'
-    } else {
+    par1 = document.getElementById('gene1').value.split('')
+    par2 = document.getElementById('gene2').value.split('')
 
-        let gene1 = document.getElementById('gene1').value.split('')
-        let gene2 = document.getElementById('gene2').value.split('')
+    result = par1[0] + par2[0] + ", "
+    result += par1[0] + par2[1] + ", "
+    result += par1[1] + par2[1] + ", "
+    result += par1[1] + par2[0]
 
-        let result = (gene1[0] + '' + gene2[1])
+    return result
 
-        return result
-    }
 }
-
 function clear() {
 
     document.getElementById('result').innerHTML = ""
 
 }
 
-function checkGenes(result) {
-
-    if (result == 'AA' || result == 'Aa' || result == 'aa') {
-        return true
-    } else {
-        return false
-    }
-
-}
-
 function showResult() {
 
-    result = generateGenes()
-    if (checkGenes(result) == true) {
+    result = calculoGenes()
+
         clear()
         document.getElementById('result').innerHTML = result
-    } else {
-        clear()
-        document.getElementById('result').innerHTML = 'Valor inserido inválido!'
+        
     }
-
-}
-
-function teste() {
-    alo = document.getElementById('gene1').value
-    document.getElementById('result').innerHTML = alo
-}
 
