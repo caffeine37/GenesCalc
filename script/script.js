@@ -1,6 +1,6 @@
 function generateGenes() {
 
-    if (document.getElementById('gene1').value == 'Aa' || document.getElementById('gene2').value == 'Aa' || document.getElementById('gene1').value == 'aA' || document.getElementById('gene2').value == 'aA') {
+    if ((document.getElementById('gene1').value == 'Aa' && document.getElementById('gene2').value == 'Aa') || (document.getElementById('gene1').value == 'aA' || document.getElementById('gene2').value == 'aA')) {
         result = 'Invalid'
     } else {
 
